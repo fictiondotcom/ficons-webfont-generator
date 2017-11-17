@@ -15,7 +15,7 @@ Features:
 npm install --save-dev ficons-webfont-generator
 ```
 
-## Usage
+## Basic Usage
 
 ```js
 const ficonswebfont = require('ficons-webfont-generator');
