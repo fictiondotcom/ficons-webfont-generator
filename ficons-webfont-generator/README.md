@@ -34,6 +34,35 @@ ficonsWebfont({
 })
 ```
 
+## Advanced Usage (Example)
+
+```js
+const ficonsWebfont = require('ficons-webfont-generator');
+
+ficonsWebfont({
+  fontName: "Ficons",
+  files: filepaths,
+  dest: "./dist/fonts",
+  cssDest: "./css/ficons.css",
+  cssTemplate: "./tpl/css.hbs",
+  htmlDest: "./test/preview.html",
+  json: true,
+  jsonDest: "./dist/iconConfig.json",
+  templateOptions: {
+    classPrefix: "ficons-",
+    baseSelector: ".ficons"
+  },
+  descent: "256"
+}, (error) => {
+  if (error) {
+    console.log('Fail!', error);
+  } else {
+    console.log('Done!');
+  }
+})
+```
+
+
 ## ficonswebfont(options, done)
 
 ### options
