@@ -6,6 +6,7 @@ var _ = require('underscore')
 var generateFonts = require('./generateFonts')
 var renderCss = require('./renderCss')
 var renderHtml = require('./renderHtml')
+var renderJson = require('./renderJson')
 
 var TEMPLATES_DIR = path.join(__dirname, '..', 'templates')
 var TEMPLATES = {
