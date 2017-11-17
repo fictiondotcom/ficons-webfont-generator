@@ -1,6 +1,5 @@
 # ficons-webfont-generator
 
-
 Ficons Generator of webfonts from SVG icons.
 
 Features:
@@ -15,18 +14,18 @@ Features:
 npm install --save-dev ficons-webfont-generator
 ```
 
-## Usage
+## Basic Usage
 
 ```js
-const ficonswebfont = require('ficons-webfont-generator');
+const ficonsWebfont = require('ficons-webfont-generator');
 
-ficonswebfont({
+ficonsWebfont({
   files: [
     'src/dropdown.svg',
     'src/close.svg',
   ],
   dest: 'dest/',
-}, function(error) {
+}, (error) => {
   if (error) {
     console.log('Fail!', error);
   } else {
@@ -34,6 +33,35 @@ ficonswebfont({
   }
 })
 ```
+
+## Advanced Usage (Example)
+
+```js
+const ficonsWebfont = require('ficons-webfont-generator');
+
+ficonsWebfont({
+  fontName: "Ficons",
+  files: filepaths,
+  dest: "./dist/fonts",
+  cssDest: "./css/ficons.css",
+  cssTemplate: "./tpl/css.hbs",
+  htmlDest: "./test/preview.html",
+  json: true,
+  jsonDest: "./dist/iconConfig.json",
+  templateOptions: {
+    classPrefix: "ficons-",
+    baseSelector: ".ficons"
+  },
+  descent: "256"
+}, (error) => {
+  if (error) {
+    console.log('Fail!', error);
+  } else {
+    console.log('Done!');
+  }
+})
+```
+
 
 ## ficonswebfont(options, done)
 
@@ -271,4 +299,4 @@ ficonswebfont({
 
 ## License
 
-Public domain, see the `LICENCE` file.
+Public domain, see the `LICENSE` file.
