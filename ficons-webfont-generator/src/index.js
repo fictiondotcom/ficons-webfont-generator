@@ -26,6 +26,7 @@ var DEFAULT_OPTIONS = {
 	cssTemplate: TEMPLATES.css,
 	html: false,
 	htmlTemplate: TEMPLATES.html,
+	json: false,
 	types: ['eot', 'woff', 'woff2'],
 	order: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
 	rename: function(file) {
@@ -61,6 +62,10 @@ var webfont = function(options, done) {
 	}
 	if (options.htmlDest === undefined) {
 		options.htmlDest = path.join(options.dest, options.fontName + '.html')
+	}
+
+	if (options.jsonDest === undefined) {
+		options.jsonDest = path.join(options.dest, options.fontName + '.html')
 	}
 
 	// Warn about using deprecated template options.
@@ -124,6 +129,10 @@ function writeResult(fonts, options) {
 	if (options.html) {
 		var html = renderHtml(options)
 		writeFile(html, options.htmlDest)
+	}
+	if (options.json) {
+		var json = renderJson(options)
+		writeFile(json, options.jsonDest)
 	}
 }
 
